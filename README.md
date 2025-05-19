@@ -16,6 +16,38 @@ Una API RESTful para la gestión de tickets de soporte.
 - Java 17
 - PostgreSQL 16
 - Maven
+  
+### Compilar & Ejecutar Tests
+ Para compilar el proyecto y ejecutar los tests, utiliza los siguientes comandos:
+
+```sh
+./mvnw clean install
+```
+
+Esto compilará el código y ejecutará todas las pruebas unitarias y de integración.
+
+Si solo deseas ejecutar los tests sin compilar el jar final:
+
+```sh
+./mvnw test
+```
+
+Puedes ver los reportes de cobertura generados por JaCoCo en `target/site/jacoco/index.html` después de ejecutar:
+
+```sh
+./mvnw verify
+```
+
+> **NOTA:** Si no cuentas con una base de datos PostgreSQL, puedes usar la base de datos H2 agregando el siguiente parámetro al ejecutar los tests o la aplicación:
+>
+> ```sh
+> ./mvnw test -Dspring.profiles.active=h2
+> ```
+> o para ejecutar la aplicación:
+> ```sh
+> ./mvnw spring-boot:run -Dspring-boot.run.profiles=h2
+> ```
+
 
 ### Configuración
 
@@ -31,10 +63,16 @@ Una API RESTful para la gestión de tickets de soporte.
    spring.datasource.username=tm_db_user
    spring.datasource.password=dbadmin1519$
    ```
-3. Ejecuta el proyecto
+
+### Ejecuta el proyecto
    ```properties
    ./mvnw spring-boot:run
    ```
+   Si no cuenta con una DB Postgresql puede usar la DB H2 local
+      ```properties
+   ./mvnw spring-boot:run -Dspring-boot.run.profiles=h2
+   ```
+
 
 ## 📫 Endpoints principales
 
