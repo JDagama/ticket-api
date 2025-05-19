@@ -68,10 +68,7 @@ Puedes ver los reportes de cobertura generados por JaCoCo en `target/site/jacoco
    ```properties
    ./mvnw spring-boot:run
    ```
-   Si no cuenta con una DB Postgresql puede usar la DB H2 local
-      ```properties
-   ./mvnw spring-boot:run -Dspring-boot.run.profiles=h2
-   ```
+   Si no cuenta con una DB Postgresql puede usar la DB H2 local agregando el parametro `-Dspring-boot.run.profiles=h2`
 
 
 ## 📫 Endpoints principales
